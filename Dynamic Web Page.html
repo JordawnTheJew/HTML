@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>JavaScript Demo</title>
+        <script lang="javascript">
+            function showname() {
+                var n = document.getElementById('name')
+                var a = document.getElementById('age')
+                var m = document.getElementById('message')
+                
+            
+                if (n.value.length > 0 || a.value.length > 0)
+                    m.innerHTML='Welcome ' + n.value + " Age:  " + a.value
+                   
+            }
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>What is your name? <input id='name' type='text'></p>
+            <p id='message'></p>
+
+            <p>What is your Age? <input id='age' type='text'></p>
+            <p id='message'></p>
+        </div>
+        
+        
+        <div>
+            <button onClick="showname()">Submit</button>
+            
+        </div>
+    </body>
+</html>

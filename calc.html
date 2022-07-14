@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Whitworth Calculator</title>
+
+<link rel="shortcut icon" href="https://www.whitworth.edu/favicon/favicon.ico">
+<link rel='stylesheet' href='calc.css'>
+
+<script lang="javascript">
+    var leftval = 0
+    var op = ''
+
+    function clickCE() {
+        var disp = document.getElementById('display')  
+        disp.innerHTML = 0
+    }
+
+    function clicknum(btn) {
+            var num = btn.innerHTML
+            var disp = document.getElementById('display')
+            var x = parseInt(disp.innerHTML)
+            if (x>0)
+                disp.innerHTML = disp.innerHTML + num
+            else
+                disp.innerHTML = num
+    }
+
+    function clicktop(btn) {
+        op = btn.innerHTML
+        var disp = document.getElementById('display')
+        leftval = parseInt(disp.innerHTML)
+        disp.innerHTML = '0'
+
+    }
+
+    function clickeq() {
+        var disp = document.getElementById('display')
+        var rightval = parseInt(disp.innerHTML)
+        if (op == '+')
+            disp.innerHTML = leftval + rightval
+        if (op == '-')
+            disp.innerHTML = leftval - rightval
+        if (op == '*')
+            disp.innerHTML = leftval * rightval
+        if (op == '/')
+            disp.innerHTML = leftval / rightval
+
+        leftval=0
+        op = ''
+    }
+
+    
+</script>
+
+</head>
+
+<body>
+	<div class="main">
+		<img style="float:left;margin-left:20px;margin-top:22px;margin-bottom:60px;height:35px" src="https://d2o2figo6ddd0g.cloudfront.net/6/w/31cxsxy4no5n2j/Flagonly.jpg" alt="Whitworth University"/>
+		<img style="float:right;margin-right:20px;margin-top:22px;margin-bottom:60px;height:35px" src="https://d2o2figo6ddd0g.cloudfront.net/6/w/31cxsxy4no5n2j/Flagonly.jpg" alt="Whitworth University"/>
+		<div style="clear:both"></div>
+		<h1 style="text-align:center">π-rates Calculator</h1>
+		<table style="border:0;margin-left:auto;margin-right:auto">
+			<tr style="background-color:#c20202;text-align:right">
+				<td colspan="5"><span class="display" id="display">0</span></td>
+			</tr>
+			<tr>
+				<td><button class="number"onclick=clicknum(this)>7</button></td>
+				<td><button class="number"onclick=clicknum(this)>8</button></td>
+				<td><button class="number"onclick=clicknum(this)>9</button></td>
+				<td><button class="op"onclick=clicktop(this)>/</button></td>
+				<td><button class="op"onclick=clicktop(this)>?</button></td>
+			</tr>
+			<tr>
+				<td><button class="number"onclick=clicknum(this)>4</button></td>
+				<td><button class="number"onclick=clicknum(this)>5</button></td>
+				<td><button class="number"onclick=clicknum(this)>6</button></td>
+				<td><button class="op"onclick=clicktop(this)>*</button></td>
+				<td><button class="op"onclick=clicktop(this)>?</button></td>
+			</tr>
+			<tr>
+				<td><button class="number"onclick=clicknum(this)>1</button></td>
+				<td><button class="number"onclick=clicknum(this)>2</button></td>
+				<td><button class="number"onclick=clicknum(this)>3</button></td>
+				<td><button class="op"onclick=clicktop(this)>-</button></td>
+				<td><button class="op"onclick=clicktop(this)>?</button></td>
+			</tr>
+			<tr>
+				<td><button class="number"onclick=clicknum(this)>0</button></td>
+				<td><button class="op"onclick=clickCE(this)>CE</button></td>
+				<td><button class="op"onclick=clickeq(this)>=</button></td>
+				<td><button class="op"onclick=clicktop(this)>+</button></td>
+				<td><button class="op"onclick=clicktop(this)>?</button></td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>
